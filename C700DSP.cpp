@@ -770,9 +770,9 @@ void C700DSP::EndRegisterLog()
 #if 1
         // テスト出力
         {
-            SaveRegisterLog("/Users/osoumen/Desktop/spclog.dat");
+            SaveRegisterLog("C:\spclog.dat");
             
-            char path[] = "/Users/osoumen/Desktop/waittable.dat";
+            char path[] = "C:\waittable.dat";
             CFURLRef	savefile = CFURLCreateFromFileSystemRepresentation(NULL, (UInt8*)path, strlen(path), false);
             
             CFWriteStreamRef	filestream = CFWriteStreamCreateWithFile(NULL,savefile);
@@ -796,7 +796,7 @@ void C700DSP::EndRegisterLog()
                 }
             }
             
-            char path[] = "/Users/osoumen/Desktop/regdump.dat";
+            char path[] = "C:\regdump.dat";
             CFURLRef	savefile = CFURLCreateFromFileSystemRepresentation(NULL, (UInt8*)path, strlen(path), false);
             
             CFWriteStreamRef	filestream = CFWriteStreamCreateWithFile(NULL,savefile);
@@ -819,7 +819,7 @@ void C700DSP::EndRegisterLog()
             header[3] = (writeBytes >> 8) & 0xff;
             // DIR領域を保存
             {
-                char dirRegionDataPath[] = "/Users/osoumen/Desktop/dirregion.dat";
+                char dirRegionDataPath[] = "C:\dirregion.dat";
                 CFURLRef	savefile = CFURLCreateFromFileSystemRepresentation(NULL, (UInt8*)dirRegionDataPath, strlen(dirRegionDataPath), false);
                 
                 CFWriteStreamRef	filestream = CFWriteStreamCreateWithFile(NULL,savefile);
@@ -839,7 +839,7 @@ void C700DSP::EndRegisterLog()
             
             if (writeBytes > 0) {
                 // 波形領域を保存
-                char dirRegionDataPath[] = "/Users/osoumen/Desktop/brrregion.dat";
+                char dirRegionDataPath[] = "C:\brrregion.dat";
                 CFURLRef	savefile = CFURLCreateFromFileSystemRepresentation(NULL, (UInt8*)dirRegionDataPath, strlen(dirRegionDataPath), false);
                 
                 CFWriteStreamRef	filestream = CFWriteStreamCreateWithFile(NULL,savefile);
